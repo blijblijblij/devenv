@@ -60,11 +60,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Raimondi/delimitMate'
   " Themes
   Plug 'liuchengxu/space-vim-dark', { 'as': 'space-vim-dark'}
-  Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'ajmwagar/vim-deus', { 'as': 'vim-deus' }
-  Plug 'phanviet/vim-monokai-pro', { 'as': 'monokai-pro' }
-  Plug 'jacoborus/tender.vim', { 'as': 'tender'}
-  Plug 'connorholyday/vim-snazzy', { 'as': 'snazzy' }
   Plug 'KeitaNakamura/neodark.vim'
 call plug#end()
 " ================ General Config ====================
@@ -251,15 +246,6 @@ endif
 
 set background=dark
 
-" solarized
-" colorscheme solarized
-" let g:solarized_termtrans = 1
-" let g:airline_solarized_bg='dark'
-
-" colorscheme vividchalk
-" colorscheme PaperColor
-" colorscheme angr
-
 " space vim dark
 colorscheme space-vim-dark
 let g:airline_theme='violet'
@@ -273,24 +259,6 @@ hi LineNr ctermbg=NONE guibg=NONE
 " let g:neodark#solid_vertsplit = 1 " default: 0
 " let g:lightline = {}
 " let g:lightline.colorscheme = 'neodark'
-
-" colorscheme snazzy
-
-" colorscheme monokai_pro
-
-" colorscheme dracula
-
-" one theme
-" let g:airline_theme='one'
-" let g:one_allow_italics = 1
-" colorscheme one
-
-" colorscheme deus
-" let g:airline_theme='deus'
-" let g:deus_termcolors=256
-
-" colorscheme tender
-" let g:airline_theme = 'tender'
 
 " autoformating
 let g:autoformat_autoindent = 0
