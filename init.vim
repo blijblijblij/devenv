@@ -286,20 +286,3 @@ nmap <leader>d :call pry#insert()<cr>
 " include puts
 nnoremap <Leader>pt oputs "#" * 60<C-M>puts "<C-R>=expand("%") . ':' . line(".")<CR>"<C-M>puts "*" * 60<esc>
 set mouse=a
-
-" script commit msg
-function! s:expand_commit_template() abort
-  let context = {
-        \ 'MY_BRANCH': matchstr(system('git rev-parse --abbrev-ref HEAD'), '\p\+'),
-        \ 'AUTHOR': 'Tommy A',
-        \ }
-
-  let lnum = nextnonblank(1)
-  while lnum && lnum < line('$')
-    call setline(lnum, substitute(getline(lnum), '\${\(\w\+\)}',
-          \ '\=get(context, submatch(1), submatch(0))', 'g'))
-    let lnum = nextnonblank(lnum + 1)
-  endwhile
-endfunction
-
-autocmd BufRead */.git/COMMIT_EDITMSG call s:expand_commit_template()
