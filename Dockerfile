@@ -16,11 +16,11 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   libevent-dev \
 	locales \
 	# neovim \
-	python-dev \
+	python3-dev \
   python3-pip \
   python3-neovim \
   rubygems \
-  ruby-dev \
+  # ruby-dev \
   silversearcher-ag \
   software-properties-common \
   tzdata \
@@ -30,9 +30,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	chsh -s /usr/bin/zsh && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install --user neovim
-RUN pip install pynvim
-RUN which python
+RUN pip3 install --user neovim
+RUN pip3 install pynvim
 
 ########################################
 # Personalizations
@@ -52,7 +51,16 @@ COPY --chown=blijblijblij init.vim /home/blijblijblij/.config/nvim
 RUN vim +PlugInstall +qall > /dev/null
 
 # Install some usefull gems
-RUN gem install rubocop rails ruby-beautify2
+RUN gem install rubocop \
+  rubocop-performance \
+  rubocop-rails \
+  rails \
+  rspec \
+  rubocop-rspec \
+  ruby-beautify2
+
+RUN rm -f /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/rbeautify &&\
+  ln -s /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/ruby-beautify /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/rbeautify
 
 # Set the workdir
 WORKDIR /src
