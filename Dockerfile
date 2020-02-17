@@ -15,12 +15,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   git  \
   libevent-dev \
 	locales \
-	# neovim \
-	python-dev \
-  python-pip \
+	python3-dev \
+  python3-pip \
   python3-neovim \
   rubygems \
-  ruby-dev \
   silversearcher-ag \
   software-properties-common \
   tzdata \
@@ -30,7 +28,8 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	chsh -s /usr/bin/zsh && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install --user neovim
+RUN pip3 install --user neovim
+RUN pip3 install pynvim
 
 ########################################
 # Personalizations
@@ -45,10 +44,16 @@ RUN mkdir -p /home/blijblijblij/.config/nvim
 RUN curl -fLo /home/blijblijblij/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 COPY --chown=blijblijblij init.vim /home/blijblijblij/.config/nvim
-COPY --chown=blijblijblij init.vim /home/blijblijblij/.vimrc
 
 # Install neovim plugins
 RUN vim +PlugInstall +qall > /dev/null
+
+# Install some usefull gems
+RUN gem install rails \
+  rubocop \
+  rubocop-performance \
+  rubocop-rails \
+  rubocop-rspec
 
 # Set the workdir
 WORKDIR /src
