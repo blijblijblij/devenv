@@ -20,7 +20,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'Chiel92/vim-autoformat'
   Plug 'scrooloose/nerdcommenter'
-  Plug 'thoughtbot/vim-rspec'
   Plug 'airblade/vim-gitgutter'
   Plug 'ervandew/supertab'
   Plug 'tpope/vim-bundler'
@@ -194,24 +193,9 @@ nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
 nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
 nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-
-" RSpec.vim mappings
-noremap <Leader>t :call RunCurrentSpecFile()<CR>
-noremap <Leader>s :call RunNearestSpec()<CR>
-noremap <Leader>l :call RunLastSpec()<CR>
-noremap <Leader>a :call RunAllSpecs()<CR>
-
-nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
 
 " For ruby block selections
 runtime macros/matchit.vim
-
-" For Running plain Ruby test scripts
-nnoremap <leader>r :RunSpec<CR>
-nnoremap <leader>l :RunSpecLine<CR>
-nnoremap <leader>e :RunSpecLastRun<CR>
-nnoremap <leader>cr :RunSpecCloseResult<CR>
 
 " Move line down and up
 noremap <Leader>- :m .+1<CR>
