@@ -1,4 +1,4 @@
-FROM 2.6-slim-buster
+FROM ruby:2.6-slim-buster
 
 # Locales
 ENV LANGUAGE=en_US.UTF-8
