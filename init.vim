@@ -277,3 +277,6 @@ set mouse=a
 " trigger rubocop
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
+
+" To enable autoformating, python(3) must be alive
+let g:python3_host_prog=/path/to/python/executable/
