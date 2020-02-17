@@ -1,0 +1,22 @@
+name: Docker build and Push
+
+on: push
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build / push neovim
+        uses: mr-smithers-excellent/docker-build-push@v2
+        with:
+          image: blijblijblij/neovim
+          tag: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
