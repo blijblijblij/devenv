@@ -15,12 +15,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   git  \
   libevent-dev \
 	locales \
-	# neovim \
 	python3-dev \
   python3-pip \
   python3-neovim \
   rubygems \
-  # ruby-dev \
   silversearcher-ag \
   software-properties-common \
   tzdata \
@@ -51,16 +49,11 @@ COPY --chown=blijblijblij init.vim /home/blijblijblij/.config/nvim
 RUN vim +PlugInstall +qall > /dev/null
 
 # Install some usefull gems
-RUN gem install rubocop \
+RUN gem install rails \
+  rubocop \
   rubocop-performance \
   rubocop-rails \
-  rails \
-  rspec \
-  rubocop-rspec \
-  ruby-beautify2
-
-RUN rm -f /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/rbeautify &&\
-  ln -s /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/ruby-beautify /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/rbeautify
+  rubocop-rspec
 
 # Set the workdir
 WORKDIR /src
