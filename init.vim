@@ -10,50 +10,43 @@ endif
 " ================ Plugin manager ====================
 " Plug config
 call plug#begin('~/.config/nvim/plugged')
-  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
   Plug 'vim-scripts/bufexplorer.zip'
-  Plug 'mileszs/ack.vim'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'scrooloose/nerdtree'
-  " what files you’ve modified since your last commi
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'Chiel92/vim-autoformat'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'ervandew/supertab'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-endwise'
-  Plug 'tpope/vim-eunuch'
-  Plug 'tpope/vim-sensible'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-rbenv'
-  Plug 'tpope/vim-haml'
-  Plug 'ngmy/vim-rubocop'
-  Plug 'tpope/vim-git'
-  Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-rhubarb'
+  Plug 'mileszs/ack.vim'                    " Search tool from Vim, with an enhanced results list.
+  Plug 'preservim/nerdtree'                 " A tree explorer plugin for vim
+  Plug 'Xuyuanp/nerdtree-git-plugin'        " A plugin of NERDTree showing git status flags
+  Plug 'Chiel92/vim-autoformat'             " Format code
+  Plug 'preservim/nerdcommenter'            " Comment functions
+  " Plug 'airblade/vim-gitgutter'           " A Vim plugin which shows a git diff in the 'gutter'
+  Plug 'ervandew/supertab'                  " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
+  Plug 'tpope/vim-commentary'               " Comment stuff out. Use gcc to comment out a line (takes a count)
+  Plug 'tpope/vim-endwise'                  " This is a simple plugin that helps to end certain structures automatically
+  " Plug 'tpope/vim-eunuch'                 " Vim sugar for the UNIX shell commands that need it the most
+  Plug 'tpope/vim-sensible'                 " A universal set of defaults that (hopefully) everyone can agree on
+  Plug 'tpope/vim-surround'                 " Surround.vim is all about 'surroundings': parentheses, brackets, quotes, XML tags, and more
+  Plug 'tpope/vim-git'                      " Included are syntax, indent, and filetype plugin files for git, gitcommit, gitconfig, gitrebase, and gitsendemail
+  Plug 'tpope/vim-fugitive'                 " may very well be the best Git wrapper of all time
+  Plug 'tpope/vim-rhubarb'                  " If fugitive.vim is the Git, rhubarb.vim is the Hub
   Plug 'terryma/vim-multiple-cursors'
   " Ruby and Rails plugins
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'janko-m/vim-test'
-  " Javascript plugins
-  Plug 'pangloss/vim-javascript'
-  Plug 'mxw/vim-jsx'
+  Plug 'tpope/vim-rails'                    " This is a massive (in a good way) Vim plugin for editing Ruby on Rails applications
+  Plug 'ngmy/vim-rubocop'                   " The Vim RuboCop plugin runs RuboCop and displays the results in Vim
+  Plug 'BlakeWilliams/vim-pry'              " Insert pry statements quickly
   " var
-  Plug 'benmills/vimux'
-  Plug 'w0rp/ale' "ALE (Asynchronous Lint Engine) is a plugin for providing linting
-  Plug 'majutsushi/tagbar'
-  Plug 'BlakeWilliams/vim-pry'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  Plug 'elzr/vim-json'
-  Plug 'stephpy/vim-yaml'
-  Plug 'cespare/vim-toml'
-  Plug 'Raimondi/delimitMate'
+  Plug 'benmills/vimux'                     " Easily interact with tmux from vim
+  Plug 'w0rp/ale'                           "ALE (Asynchronous Lint Engine) is a plugin for providing linting
+  Plug 'majutsushi/tagbar'                  " Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf is a general-purpose command-line fuzzy finder
+  Plug 'junegunn/fzf.vim'                   " fzf runs asynchronously and can be orders of magnitude faster than similar Vim plugins
+  Plug 'elzr/vim-json'                      " Distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing
+  Plug 'stephpy/vim-yaml'                   " Syntax for yaml
+  Plug 'cespare/vim-toml'                   " Syntac for toml
+  Plug 'Raimondi/delimitMate'               " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc
   " Themes
   Plug 'liuchengxu/space-vim-dark', { 'as': 'space-vim-dark'}
   Plug 'KeitaNakamura/neodark.vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 " ================ General Config ====================
 
@@ -280,3 +273,7 @@ nmap <leader>d :call pry#insert()<cr>
 " include puts
 nnoremap <Leader>pt oputs "#" * 60<C-M>puts "<C-R>=expand("%") . ':' . line(".")<CR>"<C-M>puts "*" * 60<esc>
 set mouse=a
+
+" trigger rubocop
+let g:vimrubocop_keymap = 0
+nmap <Leader>r :RuboCop<CR>
