@@ -11,12 +11,12 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Build
+      - name: Build / push neovim
         uses: mr-smithers-excellent/docker-build-push@v2
         with:
           image: blijblijblij/neovim
           tag: latest
           registry: docker.io
-          dockerfile: vim/Dockerfile
+          dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
