@@ -15,7 +15,7 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v2
         with:
           image: blijblijblij/neovim
-          # tag: latest
+          tag: latest
           registry: docker.io
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
