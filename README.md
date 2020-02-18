@@ -13,6 +13,7 @@ To better control my ide I have added neovim to docker as
 well, and now I can do something like this:
 
 ```bash
+# $HOME/Bin/nv
 #!/bin/bash
 # Command for running neovim
 
