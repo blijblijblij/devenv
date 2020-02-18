@@ -1,7 +1,8 @@
-[![GitHub license](https://img.shields.io/github/license/blijblijblij/devenv)](https://github.com/blijblijblij/devenv/blob/develop/LICENSE)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fblijblijblij%2Fdevenv%2Fbadge%3Fref%3Ddevelop&style=flat)](https://actions-badge.atrox.dev/blijblijblij/devenv/goto?ref=develop)
 [![GitHub issues](https://img.shields.io/github/issues/blijblijblij/devenv)](https://github.com/blijblijblij/devenv/issues)
 [![](https://images.microbadger.com/badges/image/blijblijblij/neovim.svg)](https://microbadger.com/images/blijblijblij/neovim "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/blijblijblij/neovim.svg)](https://microbadger.com/images/blijblijblij/neovim "Get your own version badge on microbadger.com")
+[![GitHub license](https://img.shields.io/github/license/blijblijblij/devenv)](https://github.com/blijblijblij/devenv/blob/develop/LICENSE)
 
 # devenv
 I have dockerized most of my dev work, especially the 
