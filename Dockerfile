@@ -31,6 +31,31 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 RUN pip3 install --user neovim
 RUN pip3 install pynvim
 
+# Add NodeJS to sources list
+RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash -
+
+# Install dependencies
+RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrade && \
+  DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
+    nodejs \
+    yarn=$YARN_VERSION-1 \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    truncate -s 0 /var/log/*log
+
+RUN npm i -g \
+    eslint \
+    babel-eslint \
+    eslint-plugin-react \
+    prettier \
+    eslint-config-prettier \
+    eslint-plugin-prettier \
+    eslint-plugin-import \
+    stylelint \
+    eslint-config-airbnb \
+    eslint-plugin-jsx-a11y \
+    js-beautify
+
 ########################################
 # Personalizations
 ########################################
