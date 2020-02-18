@@ -8,6 +8,9 @@ ENV LANG=en_US.UTF-8
 ENV TERM screen-256color
 ENV DEBIAN_FRONTEND noninteractive
 
+# node
+ENV NODE_MAJOR 12
+
 # Common packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	curl \
