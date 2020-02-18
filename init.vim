@@ -34,7 +34,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'BlakeWilliams/vim-pry'              " Insert pry statements quickly
   " var
   Plug 'benmills/vimux'                     " Easily interact with tmux from vim
-  Plug 'w0rp/ale'                           "ALE (Asynchronous Lint Engine) is a plugin for providing linting
+  Plug 'w0rp/ale'                           " ALE (Asynchronous Lint Engine) is a plugin for providing linting
   Plug 'majutsushi/tagbar'                  " Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fzf is a general-purpose command-line fuzzy finder
   Plug 'junegunn/fzf.vim'                   " fzf runs asynchronously and can be orders of magnitude faster than similar Vim plugins
@@ -42,6 +42,19 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'stephpy/vim-yaml'                   " Syntax for yaml
   Plug 'cespare/vim-toml'                   " Syntac for toml
   Plug 'Raimondi/delimitMate'               " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc
+  " Javascript plugins
+  Plug 'pangloss/vim-javascript'
+  Plug 'mattn/emmet-vim' " autocomplete html
+  " -------------------------------------------- REACT
+  " https://jaxbot.me/articles/setting-up-vim-for-react-js-jsx-02-03-2015
+  " lint - https://drivy.engineering/setting-up-vim-for-react/
+  " install locally
+  "//--------------------------------------------
+  Plug 'mxw/vim-jsx'
+  "Code linting
+  Plug 'skywind3000/asyncrun.vim'
+  "IntelliSense
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} 
   " Themes
   Plug 'liuchengxu/space-vim-dark', { 'as': 'space-vim-dark'}
   Plug 'KeitaNakamura/neodark.vim'
