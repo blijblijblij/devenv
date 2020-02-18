@@ -23,3 +23,6 @@ docker run -i -t -P -v "$dir_name":/src blijblijblij/neovim /bin/zsh -c "cd /src
 ```
 
 To get my ide going where-ever I want...
+
+![screenshot](img/neovim.png "screenshot")
+
