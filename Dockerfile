@@ -69,6 +69,9 @@ RUN curl -fLo /home/blijblijblij/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 COPY --chown=blijblijblij init.vim /home/blijblijblij/.config/nvim
 
+# eslint config
+COPY .eslintrc /home/blijblijblij/.eslintrc
+
 # Install neovim plugins
 RUN vim +PlugInstall +qall > /dev/null
 
