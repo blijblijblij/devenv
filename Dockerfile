@@ -48,8 +48,8 @@ COPY --chown=blijblijblij init.vim /home/blijblijblij/.config/nvim
 # Install neovim plugins
 RUN vim +PlugInstall +qall > /dev/null
 
-# Install some usefull gems
-RUN gem install rails \
+# Install rubocop
+RUN gem install \
   rubocop \
   rubocop-performance \
   rubocop-rails \
@@ -57,4 +57,3 @@ RUN gem install rails \
 
 # Set the workdir
 WORKDIR /src
-
