@@ -1,3 +1,6 @@
+[![](https://images.microbadger.com/badges/image/blijblijblij/neovim.svg)](https://microbadger.com/images/blijblijblij/neovim "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/blijblijblij/neovim.svg)](https://microbadger.com/images/blijblijblij/neovim "Get your own version badge on microbadger.com")
+
 # devenv
 I have dockerized most of my dev work, especially the 
 ruby / rails work builds on top off [this excellent articel](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development) 
