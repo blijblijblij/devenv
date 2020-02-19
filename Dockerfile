@@ -18,12 +18,13 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   git  \
   libevent-dev \
 	locales \
-	python3-dev \
+	python3-neovim \
+  python3-dev \
   python3-pip \
-  python3-neovim \
   rubygems \
   silversearcher-ag \
   software-properties-common \
+  tidy \
   tzdata \
   zsh \
   silversearcher-ag && \
@@ -32,7 +33,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN pip3 install --user neovim
-RUN pip3 install pynvim
+RUN pip3 install pynvim sqlparse
 
 # Add NodeJS to sources list
 RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash -
@@ -56,7 +57,9 @@ RUN npm i -g \
     stylelint \
     eslint-config-airbnb \
     eslint-plugin-jsx-a11y \
-    js-beautify
+    js-beautify \
+    remark-cli \
+    fixjson
 
 ########################################
 # Personalizations
