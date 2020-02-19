@@ -250,7 +250,8 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 let g:python3_host_prog="/usr/bin/python3"
 " let g:autoformat_verbosemode=1
-noremap <F3> :Autoformat<CR>
+" noremap <F3> :Autoformat<CR>
+nmap <Leader>a :Autoformat<CR>
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
@@ -294,6 +295,6 @@ let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 
 " linting
-" let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-" let g:ale_sign_warning = '.'
-" let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
