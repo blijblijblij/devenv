@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'Xuyuanp/nerdtree-git-plugin'        " A plugin of NERDTree showing git status flags
   Plug 'Chiel92/vim-autoformat'             " Format code
   Plug 'preservim/nerdcommenter'            " Comment functions
-  " Plug 'airblade/vim-gitgutter'           " A Vim plugin which shows a git diff in the 'gutter'
+  Plug 'airblade/vim-gitgutter'           " A Vim plugin which shows a git diff in the 'gutter'
   Plug 'ervandew/supertab'                  " Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
   Plug 'tpope/vim-commentary'               " Comment stuff out. Use gcc to comment out a line (takes a count)
   Plug 'tpope/vim-endwise'                  " This is a simple plugin that helps to end certain structures automatically
@@ -248,6 +248,8 @@ hi LineNr ctermbg=NONE guibg=NONE
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+let g:python3_host_prog="/usr/bin/python3"
+" let g:autoformat_verbosemode=1
 noremap <F3> :Autoformat<CR>
 
 " Add spaces after comment delimiters by default
@@ -291,10 +293,7 @@ set mouse=a
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 
-" To enable autoformating, python(3) must be alive
-let g:python3_host_prog="/usr/bin/python3"
-
 " linting
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+" let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+" let g:ale_sign_warning = '.'
+" let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
