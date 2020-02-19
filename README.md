@@ -5,6 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/blijblijblij/devenv)](https://github.com/blijblijblij/devenv/blob/develop/LICENSE)
 
 # devenv
+
 I have dockerized most of my dev work, especially the 
 ruby / rails work builds on top off [this excellent articel](https://evilmartians.com/chronicles/ruby-on-whales-docker-for-ruby-rails-development) 
 by the [evil martians](https://github.com/evilmartians).
@@ -32,4 +33,3 @@ docker run -i -t -P -v "$dir_name":/src blijblijblij/neovim /bin/zsh -c "cd /src
 To get my ide going where-ever I want...
 
 ![screenshot](img/neovim.png "screenshot")
-
