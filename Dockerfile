@@ -1,4 +1,4 @@
-FROM ruby:2.6-slim-buster
+FROM ruby:2.4-slim-buster
 
 # Locales
 ENV LANGUAGE=en_US.UTF-8
@@ -80,10 +80,12 @@ RUN vim +PlugInstall +qall > /dev/null
 
 # Install rubocop
 RUN gem install \
+  ruby-beautify \
   rubocop \
   rubocop-performance \
   rubocop-rails \
-  rubocop-rspec
+  rubocop-rspec \
+  sass
 
 # Set the workdir
 WORKDIR /src
