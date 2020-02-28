@@ -3,9 +3,6 @@
 set nocompatible
 
 " source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-source ~/.vimrc.before
-endif
 
 " ================ Plugin manager ====================
 " Plug config
