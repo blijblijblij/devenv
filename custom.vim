@@ -66,7 +66,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " ignore
 set wildignore+=*/node_modules/*,*/tmp/*
 
-nmap <F8> :TagbarToggle<CR>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -84,3 +84,6 @@ nmap <Leader>r :RuboCop<CR>
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
+
+" will let you search through your tags file and jump to where tags are defined
+nnoremap <leader>. :CtrlPTag<cr>
