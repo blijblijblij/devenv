@@ -75,5 +75,17 @@ RUN gem install \
   rubocop-rspec \
   sass
 
+# eslint config
+COPY .eslintrc /home/vi/.eslintrc
+
+# Add nvim config
+RUN mkdir -p /home/vi/.config/nvim
+RUN curl -fLo /home/vi/.config/nvim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+COPY init.vim plugins.vim /home/vi/.config/nvim/
+
+# Install neovim plugins
+RUN vim +PlugInstall +qall > /dev/null
+
 # Set the workdir
 WORKDIR /src
