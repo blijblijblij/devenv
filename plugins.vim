@@ -20,7 +20,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-rhubarb'                  " If fugitive.vim is the Git, rhubarb.vim is the Hub
   Plug 'terryma/vim-multiple-cursors'
   " Ruby and Rails plugins
-
   Plug 'tpope/vim-rails'                    " This is a massive (in a good way) Vim plugin for editing Ruby on Rails applications
   Plug 'ngmy/vim-rubocop'                   " The Vim RuboCop plugin runs RuboCop and displays the results in Vim
   Plug 'BlakeWilliams/vim-pry'              " Insert pry statements quickly
@@ -53,5 +52,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   "  automatically resizes windows when their content exceeds their window dimensions
+  Plug 'camspiers/animate.vim'
   Plug 'camspiers/lens.vim'
 call plug#end()
