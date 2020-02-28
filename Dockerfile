@@ -14,6 +14,7 @@ ENV NODE_MAJOR 12
 # Common packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   curl \
+  ctags \
   fzf \
   git  \
   libevent-dev \
@@ -88,6 +89,8 @@ COPY init.vim \
   custom.vim \
   ui.vim \
   /home/vi/.config/nvim/
+
+COPY .ctags /home/vi/
 
 # Install neovim plugins
 RUN vim +PlugInstall +qall > /dev/null
