@@ -13,7 +13,7 @@ ENV NODE_MAJOR 12
 
 # Common packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
-	curl \
+  curl \
   fzf \
   git  \
   libevent-dev \
@@ -41,45 +41,30 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash -
 # Install dependencies
 RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrade && \
   DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
-    nodejs &&\
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    truncate -s 0 /var/log/*log
+  nodejs &&\
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+  truncate -s 0 /var/log/*log
 
 RUN npm i -g \
-    eslint \
-    babel-eslint \
-    eslint-plugin-react \
-    prettier \
-    eslint-config-prettier \
-    eslint-plugin-prettier \
-    eslint-plugin-import \
-    stylelint \
-    eslint-config-airbnb \
-    eslint-plugin-jsx-a11y \
-    js-beautify \
-    remark-cli \
-    fixjson
+  eslint \
+  babel-eslint \
+  eslint-plugin-react \
+  prettier \
+  eslint-config-prettier \
+  eslint-plugin-prettier \
+  eslint-plugin-import \
+  stylelint \
+  eslint-config-airbnb \
+  eslint-plugin-jsx-a11y \
+  js-beautify \
+  remark-cli \
+  fixjson
 
-########################################
-# Personalizations
-########################################
 # Setup non root user
-RUN groupadd -g 1000 blijblijblij
-RUN useradd -m -d /home/blijblijblij -s /bin/bash -g blijblijblij -u 1000 blijblijblij
-USER blijblijblij
-
-# Add nvim config. Put this last since it changes often
-RUN mkdir -p /home/blijblijblij/.config/nvim
-RUN curl -fLo /home/blijblijblij/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-COPY --chown=blijblijblij init.vim /home/blijblijblij/.config/nvim
-
-# eslint config
-COPY .eslintrc /home/blijblijblij/.eslintrc
-
-# Install neovim plugins
-RUN vim +PlugInstall +qall > /dev/null
+RUN groupadd -g 1000 vi
+RUN useradd -m -d /home/vi -s /bin/bash -g vi -u 1000 vi
+USER vi
 
 # Install rubocop
 RUN gem install \
