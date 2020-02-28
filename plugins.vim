@@ -51,6 +51,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'KeitaNakamura/neodark.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'dracula/vim'
   "  automatically resizes windows when their content exceeds their window dimensions
   Plug 'camspiers/animate.vim'
   Plug 'camspiers/lens.vim'
