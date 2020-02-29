@@ -14,7 +14,7 @@ endif
 
 set background=dark
 
-" space vim dark
+" ================ Themes =============================
 " colorscheme space-vim-dark
 " let g:airline_theme='violet'
 " let g:space_vim_dark_background = 234
@@ -26,4 +26,6 @@ set background=dark
 " let g:lightline = {}
 " let g:lightline.colorscheme = 'neodark'
 
-color dracula
+colorscheme onedark
+let g:onedark_terminal_italics = 1
+let g:airline_theme='onedark'
