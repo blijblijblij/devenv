@@ -1,5 +1,6 @@
 ![Ci](https://github.com/blijblijblij/devenv/workflows/Ci/badge.svg?branch=develop)
 [![GitHub issues](https://img.shields.io/github/issues/blijblijblij/devenv)](https://github.com/blijblijblij/devenv/issues)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fblijblijblij%2Fdevenv.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fblijblijblij%2Fdevenv?ref=badge_shield)
 [![](https://images.microbadger.com/badges/image/blijblijblij/neovim.svg)](https://microbadger.com/images/blijblijblij/neovim "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/blijblijblij/neovim.svg)](https://microbadger.com/images/blijblijblij/neovim "Get your own version badge on microbadger.com")
 [![GitHub license](https://img.shields.io/github/license/blijblijblij/devenv)](https://github.com/blijblijblij/devenv/blob/develop/LICENSE)
@@ -33,3 +34,7 @@ docker run -i -t -P -v "$dir_name":/src blijblijblij/neovim /bin/zsh -c "cd /src
 To get my ide going where-ever I want...
 
 ![screenshot](img/neovim.png "screenshot")
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fblijblijblij%2Fdevenv.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fblijblijblij%2Fdevenv?ref=badge_large)
