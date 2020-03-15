@@ -52,7 +52,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'joshdick/onedark.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  "  automatically resizes windows when their content exceeds their window dimensions
-  Plug 'camspiers/animate.vim'
+  Plug 'camspiers/animate.vim'              " automatically resizes windows when their content exceeds their window dimensions
   Plug 'camspiers/lens.vim'
+  Plug 'wellle/context.vim'                 " plugin that shows the context of the currently visible buffer contents
 call plug#end()
