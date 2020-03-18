@@ -18,11 +18,16 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-git'                      " Included are syntax, indent, and filetype plugin files for git, gitcommit, gitconfig, gitrebase, and gitsendemail
   Plug 'tpope/vim-fugitive'                 " may very well be the best Git wrapper of all time
   Plug 'tpope/vim-rhubarb'                  " If fugitive.vim is the Git, rhubarb.vim is the Hub
+  Plug 'tpope/vim-dispatch'                 " Kick off builds and test suites using one of several asynchronous adapters
   Plug 'terryma/vim-multiple-cursors'
   " Ruby and Rails plugins
+  Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-rails'                    " This is a massive (in a good way) Vim plugin for editing Ruby on Rails applications
   Plug 'ngmy/vim-rubocop'                   " The Vim RuboCop plugin runs RuboCop and displays the results in Vim
+  Plug 'thoughtbot/vim-rspec'               " a lightweight RSpec runner for Vim
   Plug 'BlakeWilliams/vim-pry'              " Insert pry statements quickly
+  Plug 'tpope/vim-haml'                     " Enabled .haml extension
+  Plug 'jondkinney/vim-cucumber'              " Enabled .feature files
   " var
   Plug 'benmills/vimux'                     " Easily interact with tmux from vim
   Plug 'w0rp/ale'                           " ALE (Asynchronous Lint Engine) is a plugin for providing linting
