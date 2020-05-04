@@ -89,9 +89,9 @@ let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
 nnoremap <leader>. :CtrlPTag<cr>
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
 " run the rspec commands via Dispatch into the dip environment
-let g:rspec_command = "Dispatch dip rspec {spec}"
+" let g:rspec_command = "Dispatch dip rspec {spec}"

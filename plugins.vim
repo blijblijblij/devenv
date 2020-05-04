@@ -24,7 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-rails'                    " This is a massive (in a good way) Vim plugin for editing Ruby on Rails applications
   Plug 'ngmy/vim-rubocop'                   " The Vim RuboCop plugin runs RuboCop and displays the results in Vim
-  Plug 'thoughtbot/vim-rspec'               " a lightweight RSpec runner for Vim
+  " Plug 'thoughtbot/vim-rspec'               " a lightweight RSpec runner for Vim
   Plug 'BlakeWilliams/vim-pry'              " Insert pry statements quickly
   Plug 'tpope/vim-haml'                     " Enabled .haml extension
   Plug 'jondkinney/vim-cucumber'              " Enabled .feature files
