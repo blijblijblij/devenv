@@ -1,4 +1,4 @@
-FROM ruby:2.4-slim-buster
+FROM ruby:2.6-slim-buster
 
 # Locales
 ENV LANGUAGE=en_US.UTF-8
@@ -69,12 +69,19 @@ USER vi
 
 # Install rubocop
 RUN gem install \
-  ruby-beautify \
+  # ruby-beautify \
+  ruby-beautify2 \
   rubocop \
   rubocop-performance \
   rubocop-rails \
   rubocop-rspec \
   sass
+
+# TODO: fix ruby-beautify2
+# https://github.com/jirutka/ruby-beautify2/issues/1
+RUN rm -f /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/rbeautify && \
+ ln -s /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/ruby-rbeautify \
+ /usr/local/bundle/gems/ruby-beautify2-0.98.0/bin/rbeautify
 
 # eslint config
 COPY .eslintrc /home/vi/.eslintrc
