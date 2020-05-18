@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'                 " Surround.vim is all about 'surroundings': parentheses, brackets, quotes, XML tags, and more
   Plug 'tpope/vim-git'                      " Included are syntax, indent, and filetype plugin files for git, gitcommit, gitconfig, gitrebase, and gitsendemail
   Plug 'tpope/vim-fugitive'                 " may very well be the best Git wrapper of all time
+  Plug 'APZelos/blamer.nvim'                " A git blame plugin for (neo)vim inspired by VS Code's GitLens plugin
   Plug 'tpope/vim-rhubarb'                  " If fugitive.vim is the Git, rhubarb.vim is the Hub
   Plug 'tpope/vim-dispatch'                 " Kick off builds and test suites using one of several asynchronous adapters
   Plug 'terryma/vim-multiple-cursors'
