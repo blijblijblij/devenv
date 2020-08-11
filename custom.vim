@@ -95,7 +95,3 @@ nnoremap <leader>. :CtrlPTag<cr>
 " map <Leader>a :call RunAllSpecs()<CR>
 " run the rspec commands via Dispatch into the dip environment
 " let g:rspec_command = "Dispatch dip rspec {spec}"
-"
-
-" enable blamer plugin by default
-let g:blamer_enabled = 1
