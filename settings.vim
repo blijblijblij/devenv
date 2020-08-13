@@ -82,3 +82,4 @@ set linebreak    "Wrap lines at convenient points
 
 set mouse=a
 
+let g:coc_node_path = '/usr/bin/node'

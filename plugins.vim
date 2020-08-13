@@ -50,7 +50,7 @@ call plug#begin('~/.config/nvim/plugged')
   "Code linting
   Plug 'skywind3000/asyncrun.vim'
   "IntelliSense
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} 
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
   " Themes
   Plug 'liuchengxu/space-vim-dark', { 'as': 'space-vim-dark'}
   Plug 'KeitaNakamura/neodark.vim'

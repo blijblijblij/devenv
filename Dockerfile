@@ -11,38 +11,62 @@ ENV DEBIAN_FRONTEND noninteractive
 # node
 ENV NODE_MAJOR 12
 
+# yarn
+ENV YARN_VERSION 1.22.4
+
 # Common packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   curl \
   ctags \
   fzf \
-  git  \
   libevent-dev \
 	locales \
-	python3-neovim \
   python3-dev \
   python3-pip \
   rubygems \
-  silversearcher-ag \
-  software-properties-common \
   tidy \
   tzdata \
   zsh \
+  git  \
+  software-properties-common \
+  ninja-build \
+  gettext \
+  libtool \
+  libtool-bin \
+  autoconf \
+  automake \
+  cmake \
+  g++ \
+  pkg-config \
+  unzip \ 
   silversearcher-ag && \
 	locale-gen en_US.UTF-8 && \
 	chsh -s /usr/bin/zsh && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip3 install --user neovim
+# build neovim
+RUN git clone https://github.com/neovim/neovim.git /neovim && \
+  cd /neovim && \
+  make CMAKE_BUILD_TYPE=Release && \
+  make install && \
+  rm -rf /neovim
+
+# RUN pip3 install --user neovim
 RUN pip3 install pynvim sqlparse
 
 # Add NodeJS to sources list
 RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash -
 
+# Add Yarn to the sources list
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+  && echo 'deb http://dl.yarnpkg.com/debian/ stable main' > /etc/apt/sources.list.d/yarn.list
+
 # Install dependencies
-RUN apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrade && \
-  DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
-  nodejs &&\
+RUN apt-get update -qq && \
+  DEBIAN_FRONTEND=noninteractive apt-get -yq dist-upgrade && \
+  apt-get install -yq --no-install-recommends \
+  nodejs \
+  yarn=$YARN_VERSION-1 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   truncate -s 0 /var/log/*log
@@ -60,7 +84,8 @@ RUN npm i -g \
   eslint-plugin-jsx-a11y \
   js-beautify \
   remark-cli \
-  fixjson
+  fixjson \
+  neovim
 
 # Setup non root user
 RUN groupadd -g 1000 vi
@@ -69,13 +94,13 @@ USER vi
 
 # Install rubocop
 RUN gem install \
-  # ruby-beautify \
   ruby-beautify2 \
   rubocop \
   rubocop-performance \
   rubocop-rails \
   rubocop-rspec \
-  sass
+  sass \
+  neovim
 
 # TODO: fix ruby-beautify2
 # https://github.com/jirutka/ruby-beautify2/issues/1
@@ -100,7 +125,7 @@ COPY init.vim \
 COPY .ctags /home/vi/
 
 # Install neovim plugins
-RUN vim +PlugInstall +qall > /dev/null
+RUN nvim +PlugInstall +qall > /dev/null
 
 # Set the workdir
 WORKDIR /src
