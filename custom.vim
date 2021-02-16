@@ -78,7 +78,7 @@ nnoremap <Leader>pt oputs "#" * 60<C-M>puts "<C-R>=expand("%") . ':' . line(".")
 
 " trigger rubocop
 let g:vimrubocop_keymap = 0
-nmap <Leader>r :RuboCop<CR>
+nmap <Leader>r :RuboCop -a<CR>
 
 " linting
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
