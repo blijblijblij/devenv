@@ -60,4 +60,5 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline-themes'
   Plug 'camspiers/animate.vim'              " automatically resizes windows when their content exceeds their window dimensions
   Plug 'camspiers/lens.vim'
+  Plug 'kyoz/purify', { 'rtp': 'vim' }
 call plug#end()
