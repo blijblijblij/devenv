@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'stephpy/vim-yaml'                   " Syntax for yaml
   Plug 'cespare/vim-toml'                   " Syntac for toml
   Plug 'Raimondi/delimitMate'               " This plug-in provides automatic closing of quotes, parenthesis, brackets, etc
+  Plug 'Yggdroot/indentLine'                " plugin is used for displaying thin vertical lines at each indentation level for code indented with spaces
   " Javascript plugins
   Plug 'pangloss/vim-javascript'
   Plug 'mattn/emmet-vim' " autocomplete html
