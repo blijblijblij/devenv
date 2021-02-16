@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV NODE_MAJOR 12
 
 # yarn
-ENV YARN_VERSION 1.22.4
+ENV YARN_VERSION 1.22.5
 
 # Common packages
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
